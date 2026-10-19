@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --initial-path=/story/components-button--docs",
     "build-storybook": "storybook build"
   },
   "dependencies": {
