@@ -1,75 +1,96 @@
-# React + TypeScript + Vite
+# Mini Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A reusable React + TypeScript component library built from scratch to practice modern frontend development, component design, accessibility, testing, and CI/CD.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[View Storybook](https://kishordhamodkar.github.io/mini-component-library/)
 
-## React Compiler
+## 📦 Components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The library currently includes:
 
-## Expanding the ESLint configuration
+- **Button**
+  - Variants: Primary, Secondary, Danger, Ghost
+  - Sizes: Small, Medium, Large
+  - Loading state
+  - Disabled state
+  - Polymorphic `as` prop
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Input**
+  - Labels
+  - Helper text
+  - Error states
+  - Disabled state
+  - Accessible form relationships
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Checkbox**
+  - Label support
+  - Checked state
+  - Disabled state
+  - Keyboard accessible
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Switch**
+  - Checked state
+  - Disabled state
+  - Custom visual styling
+  - Keyboard accessible
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Tabs**
+  - Compound component API
+  - React Context
+  - Click navigation
+  - Keyboard navigation
+  - Arrow key navigation
+  - Home / End navigation
+  - Focus management
+  - ARIA attributes
 
-```
+## 🛠️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Vitest
+- React Testing Library
+- Testing Library User Event
+- Storybook
+- Playwright
+- GitHub Actions
+- GitHub Pages
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+├── components/
+│   ├── Button.tsx
+│   ├── Button.test.tsx
+│   ├── Button.stories.tsx
+│   ├── Input.tsx
+│   ├── Input.test.tsx
+│   ├── Input.stories.tsx
+│   ├── Checkbox.tsx
+│   ├── Checkbox.test.tsx
+│   ├── Checkbox.stories.tsx
+│   ├── Switch.tsx
+│   ├── Switch.test.tsx
+│   ├── Switch.stories.tsx
+│   ├── Tabs.tsx
+│   ├── Tabs.test.tsx
+│   └── Tabs.stories.tsx
+│
+├── test/
+│   └── setup.ts
+│
+└── App.tsx
 
-```
+.storybook/
+├── main.ts
+└── preview.ts
+
+.github/
+└── workflows/
+    ├── ci.yml
+    └── deploy-storybook.yml
